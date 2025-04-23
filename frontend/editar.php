@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$titulo, $descripcion, $ingredientes, $pasos, $tiempo_preparacion, $imagen_nombre, $id]);
 
-    header('Location: ./index.php');
+    header('Location: https://recetasapp.codearlo.com');
     exit;
 }
 ?>
