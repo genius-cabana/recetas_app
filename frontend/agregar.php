@@ -13,6 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_FILES['imagen']['name']) {
         $imagen_nombre = uniqid() . '_' . basename($_FILES['imagen']['name']);
         $ruta_imagen = 'imagenes/' . $imagen_nombre;
+
+        // Crear la carpeta "imagenes" si no existe
+        if (!is_dir('imagenes')) {
+            mkdir('imagenes', 0755, true);
+        }
+
         move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta_imagen);
     }
 
@@ -21,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$titulo, $descripcion, $ingredientes, $pasos, $tiempo_preparacion, $imagen_nombre]);
 
+    // Redirigir a index.php después de agregar la receta
     header('Location: https://recetasapp.codearlo.com');
     exit;
 }
@@ -35,7 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="container">
         <h1>➕Agregar Nueva Receta➕</h1>
-        <form action="https://recetasapp.codearlo.com/agregar" method="POST" enctype="multipart/form-data">
+        <!-- Formulario para agregar receta -->
+        <form action="" method="POST" enctype="multipart/form-data">
             <label>1️⃣Título:</label><br>
             <input type="text" name="titulo" required><br>
             <label>2️⃣Descripción:</label><br>
@@ -51,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Guardar Receta</button>
         </form>
         <br>
-        <a href="recetasapp.codearlo.com">Volver al listado</a>
+        <a href="https://recetasapp.codearlo.com">Volver al listado</a>
     </div>
 </body>
 </html>
