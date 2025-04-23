@@ -31,7 +31,7 @@ $recetas = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </form>
 
         <br>
-        <a href="../frontend/agregar_receta.php" class="boton">✔️Agregar nueva receta</a>
+        <a href="https://recetasapp.codearlo.com/agregar" class="boton">✔️Agregar nueva receta</a>
         <br><br>
 
         <!-- Lista de Recetas -->
@@ -49,8 +49,8 @@ $recetas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <p><strong>Pasos:</strong> <?php echo htmlspecialchars($receta['pasos']); ?></p>
                     <p><strong>Tiempo:</strong> <?php echo $receta['tiempo_preparacion']; ?> min</p>
                     <div class="acciones">
-                        <a href="../frontend/editar_receta.php?id=<?php echo $receta['id']; ?>" class="boton">✏️ Editar</a>
-                        <a href="../backend/eliminar.php?id=<?php echo $receta['id']; ?>" class="boton eliminar" onclick="return confirm('¿Eliminar esta receta?');">🗑️ Eliminar</a>
+                        <a href="https://recetasapp.codearlo.com/editar?id=<?php echo $receta['id']; ?>" class="boton">✏️ Editar</a>
+                        <a href="https://recetasapp.codearlo.com/eliminar?id=<?php echo $receta['id']; ?>" class="boton eliminar" onclick="return confirm('¿Eliminar esta receta?');">🗑️ Eliminar</a>
                     </div>
                 </div>
             <?php endforeach; ?>
