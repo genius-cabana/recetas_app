@@ -20,7 +20,7 @@ $recetas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <div class="container">
         <h1>💯Gestor de Recetas💯</h1>
-        <form method="GET" action="index.php">
+        <form method="GET" action="https://recetasapp.codearlo.com">
             <input type="text" name="buscar" placeholder="Buscar receta por título" value="<?php echo htmlspecialchars($busqueda); ?>">
             <button type="submit">🔎</button>
         </form>
