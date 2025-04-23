@@ -28,7 +28,7 @@ $recetas = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </form>
 
         <br>
-        <a href="ahttps://recetasapp.codearlo.com/agregar">✔️Agregar nueva receta</a>
+        <a href="https://recetasapp.codearlo.com/agregar">✔️Agregar nueva receta</a>
         <br><br>
 
         <!-- Lista de Recetas -->
