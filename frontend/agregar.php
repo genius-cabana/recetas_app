@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$titulo, $descripcion, $ingredientes, $pasos, $tiempo_preparacion, $imagen_nombre]);
 
-    header('Location: ./index.php');
+    header('Location: https://recetasapp.codearlo.com');
     exit;
 }
 ?>
@@ -30,12 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Gestor de Recetas</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../frontend/css/styles.css">
 </head>
 <body>
     <div class="container">
         <h1>➕Agregar Nueva Receta➕</h1>
-        <form action="agregar_receta.php" method="POST" enctype="multipart/form-data">
+        <form action="https://recetasapp.codearlo.com/agregar" method="POST" enctype="multipart/form-data">
             <label>1️⃣Título:</label><br>
             <input type="text" name="titulo" required><br>
             <label>2️⃣Descripción:</label><br>
