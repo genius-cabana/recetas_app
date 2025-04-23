@@ -1,14 +1,11 @@
 <?php
 include '../backend/db.php';
 
-// Obtener término de búsqueda (si existe)
 $busqueda = $_GET['buscar'] ?? '';
 if ($busqueda) {
-    // Preparar consulta SQL para buscar recetas por título
     $stmt = $pdo->prepare("SELECT * FROM recetas WHERE titulo LIKE ?");
     $stmt->execute(["%$busqueda%"]);
 } else {
-    // Consulta para obtener todas las recetas
     $stmt = $pdo->query("SELECT * FROM recetas");
 }
 $recetas = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -18,7 +15,7 @@ $recetas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Gestor de Recetas</title>
-    <link rel="stylesheet" href="../frontend/css/estilos.css"> <!-- Asegúrate de que el archivo exista -->
+    <link rel="stylesheet" href="../frontend/css/styles.css">
 </head>
 <body>
     <div class="container">
@@ -31,7 +28,7 @@ $recetas = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </form>
 
         <br>
-        <a href="https://recetasapp.codearlo.com/agregar" class="boton">✔️Agregar nueva receta</a>
+        <a href="ahttps://recetasapp.codearlo.com/agregar">✔️Agregar nueva receta</a>
         <br><br>
 
         <!-- Lista de Recetas -->
