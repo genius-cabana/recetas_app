@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$titulo, $descripcion, $ingredientes, $pasos, $tiempo_preparacion, $imagen_nombre, $id]);
 
-    header('Location: ../index.php');
+    header('Location: /recetas_app/frontend/index.php');
     exit;
 }
 ?>
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Gestor de Recetas</title>
-    <link rel="stylesheet" href="/frontend/css/styles.css">
+    <link rel="stylesheet" href="/recetas_app/frontend/css/styles.css">
 </head>
 <body>
     <div class="container">
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Guardar cambios</button>
         </form>
         <br>
-        <a href="/frontend/index.php">Volver al listado</a>
+        <a href="/recetas_app/frontend/index.php">Volver al listado</a>
     </div>
 </body>
 </html>

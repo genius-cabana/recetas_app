@@ -1,5 +1,5 @@
 <?php
-include '../backend/db.php';
+include '/recetas_app/backend/db.php';
 
 $busqueda = $_GET['buscar'] ?? '';
 if ($busqueda) {
@@ -15,7 +15,7 @@ $recetas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Gestor de Recetas</title>
-    <link rel="stylesheet" href="/frontend/css/styles.css">
+    <link rel="stylesheet" href="/recetas_app/frontend/css/styles.css">
 </head>
 <body>
     <div class="container">
@@ -41,8 +41,8 @@ $recetas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <p><strong>Pasos:</strong> <?php echo htmlspecialchars($receta['pasos']); ?></p>
                     <p><strong>Tiempo:</strong> <?php echo $receta['tiempo_preparacion']; ?> min</p>
                     <div class="acciones">
-                        <a href="/frontend/editar.php?id=<?php echo $receta['id']; ?>" class="boton">✏️ Editar</a>
-                        <a href="/backend/eliminar.php?id=<?php echo $receta['id']; ?>" class="boton eliminar" onclick="return confirm('¿Eliminar esta receta?');">🗑️ Eliminar</a>
+                        <a href="/recetas_app/frontend/editar.php?id=<?php echo $receta['id']; ?>" class="boton">✏️ Editar</a>
+                        <a href="/recetas_app/backend/eliminar.php?id=<?php echo $receta['id']; ?>" class="boton eliminar" onclick="return confirm('¿Eliminar esta receta?');">🗑️ Eliminar</a>
                     </div>
                 </div>
             <?php endforeach; ?>
