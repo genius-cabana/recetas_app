@@ -15,7 +15,7 @@ $recetas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Gestor de Recetas</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../frontend/css/styles.css">
 </head>
 <body>
     <div class="container">
