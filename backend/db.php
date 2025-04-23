@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'recetas_app';
+$dbname = 'u347334547_recetas_app';
 $username = 'u347334547_admin_recetas';
 $password = 'CH7322a#';
 
