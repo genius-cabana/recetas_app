@@ -1,5 +1,6 @@
 RewriteEngine On
-DirectoryIndex index.php
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php?path=$1 [L,QSA]
+DirectoryIndex frontend/index.php
+
+RewriteRule ^agregar/?$ frontend/agregar.php [L]
+RewriteRule ^eliminar/?$ backend/eliminar.php [L]
+RewriteRule ^editar/?$ frontend/editar.php [L]
