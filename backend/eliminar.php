@@ -17,6 +17,6 @@ if ($id) {
     $stmt = $pdo->prepare("DELETE FROM recetas WHERE id = ?");
     $stmt->execute([$id]);
 }
-header('Location: ../index.php');
+header('Location: https://recetasapp.codearlo.com');
 exit;
 ?>
