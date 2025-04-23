@@ -1,3 +1,19 @@
+/* Variables CSS para colores y espaciado */
+:root {
+    --color-primary: #3498db;
+    --color-primary-hover: #2980b9;
+    --color-danger: #e74c3c;
+    --color-danger-hover: #c0392b;
+    --color-text: #333;
+    --color-background: white;
+    --color-border: #ddd;
+    --padding-small: 10px;
+    --padding-medium: 15px;
+    --padding-large: 20px;
+    --border-radius: 8px;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 /* Reset básico */
 * {
     box-sizing: border-box;
@@ -9,17 +25,18 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(to right, #f9f9f9, #f0f0f0);
     padding: 40px;
-    color: #333;
+    color: var(--color-text);
+    line-height: 1.6;
 }
 
 /* Contenedor principal */
 .container {
     max-width: 900px;
     margin: 0 auto;
-    background-color: white;
-    padding: 30px;
+    background-color: var(--color-background);
+    padding: var(--padding-large);
     border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
 }
 
 /* Encabezado */
@@ -27,6 +44,7 @@ h1 {
     text-align: center;
     margin-bottom: 30px;
     color: #2c3e50;
+    font-size: 2rem;
 }
 
 /* Formularios */
@@ -35,98 +53,90 @@ form input[type="number"],
 form input[type="file"],
 form textarea {
     width: 100%;
-    padding: 10px;
+    padding: var(--padding-small);
     margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
 form textarea {
     resize: vertical;
+    min-height: 100px;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
 }
 
 button,
 input[type="submit"] {
-    background-color: #3498db;
+    background-color: var(--color-primary);
     color: white;
-    padding: 12px 25px;
+    padding: var(--padding-medium);
     border: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 button:hover,
 input[type="submit"]:hover {
-    background-color: #2980b9;
+    background-color: var(--color-primary-hover);
 }
 
+/* Enlaces */
 a {
-    color: #3498db;
+    color: var(--color-primary);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-/* Tabla */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 30px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 15px;
-    text-align: left;
-    font-size: 15px;
-}
-
-th {
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-img {
-    max-width: 100px;
-    border-radius: 6px;
-}
-
-/* Botón estilizado para enlaces */
+/* Botones estilizados */
 .boton {
     display: inline-block;
-    background-color: #3498db;
+    background-color: var(--color-primary);
     color: white;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border-radius: 8px;
+    padding: var(--padding-medium);
+    border-radius: var(--border-radius);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
 }
 
 .boton:hover {
-    background-color: #2980b9;
+    background-color: var(--color-primary-hover);
 }
 
-/* Grid 3x3 para las recetas */
+.boton.eliminar {
+    background-color: var(--color-danger);
+}
+
+.boton.eliminar:hover {
+    background-color: var(--color-danger-hover);
+}
+
+/* Tarjetas de recetas */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
-    margin-top: 30px;
+    margin-top: var(--padding-large);
 }
 
-/* Tarjetas individuales */
 .card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    background-color: var(--color-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding-large);
     transition: transform 0.2s ease;
 }
 
@@ -137,8 +147,8 @@ img {
 .card img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--padding-small);
 }
 
 .no-image {
@@ -149,49 +159,44 @@ img {
     align-items: center;
     justify-content: center;
     color: #777;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--padding-small);
 }
 
 .card h2 {
-    margin-bottom: 10px;
+    margin-bottom: var(--padding-small);
     color: #2c3e50;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .card p {
-    font-size: 14px;
-    margin-bottom: 8px;
+    font-size: 0.9rem;
+    margin-bottom: var(--padding-small);
 }
 
-/* Botones dentro de la tarjeta */
 .acciones {
-    margin-top: 15px;
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    margin-top: var(--padding-medium);
 }
 
-.boton {
-    background-color: #3498db;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 14px;
-    text-align: center;
-    display: inline-block;
-    transition: background-color 0.2s ease;
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--padding-large);
 }
 
-.boton:hover {
-    background-color: #2980b9;
+th,
+td {
+    border: 1px solid var(--color-border);
+    padding: var(--padding-medium);
+    text-align: left;
+    font-size: 1rem;
 }
 
-.boton.eliminar {
-    background-color: #e74c3c;
-}
-
-.boton.eliminar:hover {
-    background-color: #c0392b;
+th {
+    background-color: #f4f4f4;
+    color: var(--color-text);
 }
