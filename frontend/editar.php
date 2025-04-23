@@ -33,14 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $imagen_nombre = uniqid() . '_' . basename($_FILES['imagen']['name']);
         move_uploaded_file($_FILES['imagen']['tmp_name'], 'imagenes/' . $imagen_nombre);
     } else {
-        $imagen_nombre = $imagen_actual; // Mantener imagen anterior
+        $imagen_nombre = $imagen_actual;
     }
 
     $sql = "UPDATE recetas SET titulo=?, descripcion=?, ingredientes=?, pasos=?, tiempo_preparacion=?, imagen=? WHERE id=?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$titulo, $descripcion, $ingredientes, $pasos, $tiempo_preparacion, $imagen_nombre, $id]);
 
-    header('Location: /recetas_app/frontend/index.php');
+    header('Location: ./index.php');
     exit;
 }
 ?>
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Gestor de Recetas</title>
-    <link rel="stylesheet" href="/recetas_app/frontend/css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <div class="container">
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Guardar cambios</button>
         </form>
         <br>
-        <a href="/recetas_app/frontend/index.php">Volver al listado</a>
+        <a href="recetasapp.codearlo.com">Volver al listado</a>
     </div>
 </body>
 </html>
