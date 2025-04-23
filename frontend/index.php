@@ -25,7 +25,7 @@ $recetas = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <button type="submit">🔎</button>
         </form>
         <br>
-        <a href="agregar_receta.php">✔️Agregar nueva receta</a>
+        <a href="/frontend/agregar.php">✔️Agregar nueva receta</a>
         <br><br>
         <div class="grid">
             <?php foreach ($recetas as $receta): ?>
@@ -41,8 +41,8 @@ $recetas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <p><strong>Pasos:</strong> <?php echo htmlspecialchars($receta['pasos']); ?></p>
                     <p><strong>Tiempo:</strong> <?php echo $receta['tiempo_preparacion']; ?> min</p>
                     <div class="acciones">
-                        <a href="editar_receta.php?id=<?php echo $receta['id']; ?>" class="boton">✏️ Editar</a>
-                        <a href="eliminar.php?id=<?php echo $receta['id']; ?>" class="boton eliminar" onclick="return confirm('¿Eliminar esta receta?');">🗑️ Eliminar</a>
+                        <a href="/frontend/editar.php?id=<?php echo $receta['id']; ?>" class="boton">✏️ Editar</a>
+                        <a href="/backend/eliminar.php?id=<?php echo $receta['id']; ?>" class="boton eliminar" onclick="return confirm('¿Eliminar esta receta?');">🗑️ Eliminar</a>
                     </div>
                 </div>
             <?php endforeach; ?>

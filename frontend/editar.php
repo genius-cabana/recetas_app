@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Guardar cambios</button>
         </form>
         <br>
-        <a href="../index.php">Volver al listado</a>
+        <a href="/frontend/index.php">Volver al listado</a>
     </div>
 </body>
 </html>

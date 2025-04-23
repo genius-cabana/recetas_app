@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Guardar Receta</button>
         </form>
         <br>
-        <a href="../index.php" class="boton">Volver al listado</a>
+        <a href="/frontend/index.php" class="boton">Volver al listado</a>
     </div>
 </body>
 </html>
